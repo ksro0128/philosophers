@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -pthread
+CFLAGS = -Wall -Werror -Wextra
 OBJS = main.o init.o ft_atol.o utils.o pthread_start.o philo_cycle.o eat_sleep_think.o
 NAME = philo
 
