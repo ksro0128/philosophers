@@ -6,7 +6,7 @@
 /*   By: surkim <surkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 10:23:49 by surkim            #+#    #+#             */
-/*   Updated: 2023/08/31 11:20:42 by surkim           ###   ########.fr       */
+/*   Updated: 2023/08/31 11:53:43 by surkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ void	all_free(t_info *info)
 
 int	case_1(t_info *info)
 {
-	printf("0ms 1 has taken a fork\n");
+	printf("0 1 has taken a fork\n");
 	usleep(info->time_to_die * 1000);
-	printf("%ldms 1 died\n", info->time_to_die);
+	printf("%ld 1 died\n", info->time_to_die);
 	all_free(info);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: surkim <surkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 10:23:28 by surkim            #+#    #+#             */
-/*   Updated: 2023/08/30 17:42:14 by surkim           ###   ########.fr       */
+/*   Updated: 2023/08/31 11:53:58 by surkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	print_get_fork(t_philo *philo)
 		pthread_mutex_unlock(&(philo->info->tmp_lock));
 		return ;
 	}
-	printf("%ldms %d has taken a fork\n", get_time() - philo->info->start_time, \
+	printf("%ld %d has taken a fork\n", get_time() - philo->info->start_time, \
 	philo->id);
 	pthread_mutex_unlock(&(philo->info->tmp_lock));
 }

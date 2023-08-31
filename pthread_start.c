@@ -6,7 +6,7 @@
 /*   By: surkim <surkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 10:23:57 by surkim            #+#    #+#             */
-/*   Updated: 2023/08/30 17:54:31 by surkim           ###   ########.fr       */
+/*   Updated: 2023/08/31 11:57:14 by surkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	moniter(t_info *info)
 		info->philo[i].eat_time + info->time_to_die < get_time())
 		{
 			info->die_flag = 1;
-			printf("%ldms %d died\n", get_time() - info->start_time, i + 1);
+			printf("%ld %d died\n", get_time() - info->start_time, i + 1);
 			pthread_mutex_unlock(&(info->tmp_lock));
 			return (1);
 		}

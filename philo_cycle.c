@@ -6,7 +6,7 @@
 /*   By: surkim <surkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 11:49:00 by surkim            #+#    #+#             */
-/*   Updated: 2023/08/30 17:40:46 by surkim           ###   ########.fr       */
+/*   Updated: 2023/08/31 12:26:54 by surkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	eating_sleeping_thinking(t_philo *philo)
 	pthread_mutex_unlock(&(philo->info->lock[philo->second_fork]));
 	ft_sleeping(philo);
 	ft_thinking(philo);
+	usleep(500);
 }
 
 void	*philo_cycle(void *tmp)
@@ -44,12 +45,13 @@ void	*philo_cycle(void *tmp)
 	if (philo->info->number_of_must_eat > 0)
 		eat_cnt = 0;
 	else
-		eat_cnt = -2147483649;
+		eat_cnt = -2;
 	while (check_die(philo->info) == 0 && \
 	eat_cnt < philo->info->number_of_must_eat)
 	{
 		eating_sleeping_thinking(philo);
-		eat_cnt++;
+		if (eat_cnt >= 0)
+			eat_cnt++;
 	}
 	if (eat_cnt == philo->info->number_of_must_eat)
 	{
